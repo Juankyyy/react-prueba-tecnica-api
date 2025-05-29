@@ -6,8 +6,8 @@ export const Navbar = () => {
 
     return (
         <nav>
-            <button onClick={toggleTheme}>
-                {theme == "dark" ? "Modo Claro ☀️" : "Modo Oscuro 🌚"}
+            <button className="btn" onClick={toggleTheme}>
+                {theme == "dark" ? "☀️" : "🌚"}
             </button>
         </nav>
     );
