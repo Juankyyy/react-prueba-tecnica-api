@@ -1,3 +1,9 @@
+nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
 .btn {
     box-sizing: content-box;
     border: none;
