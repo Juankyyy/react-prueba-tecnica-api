@@ -30,3 +30,9 @@
     --bg: #F9F7F7;
     --text-color: #112D4E;
 }
+
+body {
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 15px;
+}
