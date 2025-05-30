@@ -1,26 +1,28 @@
 import { useEffect, useState } from "react";
-import { Navbar } from "./components/Navbar";
 import { useCatFact } from "./hooks/useCatFact";
+import { Navbar } from "./components/Navbar";
+import { Fact } from "./components/Fact";
+import { ImageFact } from "./components/ImageFact";
 
 export const App = () => {
-    const [fact, setFact] = useState("cheese");
+    const [fact, setFact] = useState("");
     const { getFact } = useCatFact();
 
     const changeFact = async () => {
         const newFact = await getFact();
-        setFact(newFact)
-    }
+        setFact(newFact);
+    };
 
     useEffect(() => {
         changeFact();
-    }, [])
+    }, []);
 
     return (
         <>
             <Navbar />
             <h1>Cat Facts</h1>
-            <p>{fact}</p>
-            <button onClick={ changeFact }>New fact</button>
+            <Fact fact={fact} changeFact={changeFact} />
+            <ImageFact fact={fact} />
         </>
     );
 };

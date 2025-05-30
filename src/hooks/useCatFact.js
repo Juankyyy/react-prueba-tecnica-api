@@ -8,9 +8,9 @@ export const useCatFact = () => {
         } catch (err) {
             console.error(err);
         }
-    }
+    };
 
     return {
-        getFact
+        getFact,
     };
 };
