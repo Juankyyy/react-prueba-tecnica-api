@@ -7,11 +7,15 @@ export const getRandomFact = async () => {
     return fact;
 };
 
-export const getFactImage = (fact) => {
+export const getFactImage = async (fact) => {
     const arrayFact = fact.split(" ");
-    const urlImage = `https://cataas.com/cat/says/${arrayFact[0]}`;
+    const urlImage = `https://cataas.com/cat/says/${arrayFact[0]}?json=true`;
 
-    return urlImage;
+    const response = await fetch(urlImage);
+    const data = await response.json();
+    const { url } = data;
+
+    return url;
 };
 
 export const catService = {

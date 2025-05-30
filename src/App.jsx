@@ -5,7 +5,7 @@ import { Fact } from "./components/Fact";
 import { ImageFact } from "./components/ImageFact";
 
 export const App = () => {
-    const [fact, setFact] = useState("");
+    const [fact, setFact] = useState();
     const { getFact } = useCatFact();
 
     const changeFact = async () => {
