@@ -37,6 +37,13 @@ body {
     margin-top: 15px;
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 @media (max-width: 1010px) {
     body {
         margin: 10px 10px;

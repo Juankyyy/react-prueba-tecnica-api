@@ -12,11 +12,11 @@ export const App = () => {
     }, []);
 
     return (
-        <>
+        <main>
             <Navbar />
             <h1>Cat Facts</h1>
             <Fact fact={fact} changeFact={changeFact} />
             <ImageFact fact={fact} />
-        </>
+        </main>
     );
 };
