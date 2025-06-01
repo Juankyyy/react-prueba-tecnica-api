@@ -1,17 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useCatFact } from "./hooks/useCatFact";
 import { Navbar } from "./components/Navbar";
 import { Fact } from "./components/Fact";
 import { ImageFact } from "./components/ImageFact";
 
 export const App = () => {
-    const [fact, setFact] = useState();
-    const { getFact } = useCatFact();
-
-    const changeFact = async () => {
-        const newFact = await getFact();
-        setFact(newFact);
-    };
+    const { fact, changeFact } = useCatFact();
 
     useEffect(() => {
         changeFact();
