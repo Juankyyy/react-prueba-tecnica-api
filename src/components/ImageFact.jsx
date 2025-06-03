@@ -9,7 +9,7 @@ export const ImageFact = ({ fact }) => {
             {isLoading ? (
                 "Loading..."
             ) : (
-                <img src={urlImage} alt="Cat image Fact: " />
+                <img data-testid="image" src={urlImage} alt="Cat image Fact: " />
             )}
         </picture>
     );
