@@ -7,11 +7,11 @@ test("app shows a title, fact of cats and a image", async ({ page }) => {
     await page.goto(LOCALHOST_URL);
 
     // Verificar si se muestra el título
-    const title = page.locator("h1");
+    const title = page.getByTestId("title");
     await expect(title).toHaveText("Cat Facts");
 
     // Verificar si hay alguna frase
-    const fact = await page.locator("p");
-    
+    const fact = page.getByTestId("fact");
+
     await expect(fact).toHaveText(/\w+/);
 });
