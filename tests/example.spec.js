@@ -22,4 +22,20 @@ test("app shows a title, fact of cats and a image", async ({ page }) => {
 
     await expect(imageUrl?.startsWith(PREFIX_URL_IMAGE)).toBeTruthy();
 
+    // Verificar que al pulsar el botón cambia la frase
+    const factText = await fact.textContent()
+    console.log("1) ", factText);
+
+    const factBtn = page.getByTestId('factButton');
+    await factBtn.click();
+    
+    await page.waitForTimeout(1000)
+
+    const newFact = page.getByTestId("fact");
+    await expect(newFact).toHaveText(/\w+/)
+
+    const newFactText = await newFact.textContent();
+    console.log("2) ", newFactText);
+
+    await expect(factText).not.toBe(newFactText);
 });
